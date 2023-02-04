@@ -1,29 +1,32 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap');
 
-    --Dark-Text: #3b4363;
-    --Score-Text: #2a46c0;
-    --Header-Outline: #606e85;
-
-    --Radial-Gradient: linear-gradient(#1f3756, #141539);
-}
 
 body {
     width: 375px;
     background-color: #141539;
     margin: 0 auto;
-    border: 2px solid red;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+@media (min-width: 736px) {
+    body {
+        width: 500px;
+        max-height: 100vh;
+    }
 }
 
 img {
     width: 80px;
 }
 
-/* START JSX */
+/* PANEL */
 
 .panel {
     border: 2px solid #FFFFFF;
     border-radius: 0.4em;
-    margin: 1em 0;
+    margin: 1em 0 2em 0;
     padding: 0.1em 1em;
     display: flex;
     align-items: center;
@@ -44,6 +47,8 @@ img {
     border-radius: 0.3em;
 }
 
+/* START JSX */
+
 .botoes {
     display: flex;
     flex-direction: column;
@@ -52,8 +57,6 @@ img {
     background-position-x: center;
     background-position-y: center;
 }
-
-
 
 .row2 {
     display: flex;
@@ -112,9 +115,22 @@ img {
 }
 
 @keyframes pulse {
-    0%, 30% { transform: scale(0); opacity: 1; }
-    60%, 80% { transform: scale(1); }
-    100% { opacity: 1; transform: scale(1.5); }
+
+    0%,
+    30% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    60%,
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
 }
 
 
@@ -124,7 +140,6 @@ img {
     justify-content: center;
     align-items: center;
     background-color: #FFFFFF;
-    z-index: 10;
     width: 140px;
     height: 140px;
 }
@@ -157,6 +172,11 @@ img {
     font-weight: 700;
 }
 
+.again button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .res {
     display: flex;
     align-items: center;
@@ -170,6 +190,53 @@ img {
 
 .res p {
     margin: 3em 0 0 0;
+}
+
+/* RULES */
+
+.rulesButton {
+    text-align: center;
+    margin-top: 3em;
+}
+
+@media (min-width: 736px) {
+    .rulesButton {
+        margin-top: -2em;
+        text-align: end;
+    }
+}
+
+.rulesButton button {
+    background: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 0.5em;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+}
+
+.rules {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px;
+    overflow-y: hidden;
+}
+
+.rules button {
+    border: none;
+    background: none;
+}
+
+.imgModal {
+    margin: 0 0 1em 0;
+    width: 100%;
+}
+
+@media (min-width: 736px) {
+    .imgModal {
+        width: 37%;
+    }
 }
 
 .scissors {

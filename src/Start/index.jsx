@@ -1,4 +1,5 @@
 import React from 'react'
+import Rules from '../Rules'
 
 function Start({ play }) {
     return (
@@ -41,6 +42,7 @@ function Start({ play }) {
                     </button>
                 </div>
             </main>
+            <Rules />
         </section>
     )
 }
