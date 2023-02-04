@@ -1,13 +1,193 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+
+    --Dark-Text: #3b4363;
+    --Score-Text: #2a46c0;
+    --Header-Outline: #606e85;
+
+    --Radial-Gradient: linear-gradient(#1f3756, #141539);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    width: 375px;
+    background-color: #141539;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+
+img {
+    width: 80px;
+}
+
+/* START JSX */
+
+.panel {
+    border: 2px solid #FFFFFF;
+    border-radius: 0.4em;
+    margin: 1em 0;
+    padding: 0.1em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel h1 {
+    width: 50px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.panel h2 {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 0.4em;
+    color: #141539;
+    border-radius: 0.3em;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../public/images/bg-pentagon.svg") no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+
+
+.row2 {
+    display: flex;
+    gap: 6em;
+    margin-bottom: 2em;
+}
+
+.row3 {
+    display: flex;
+    gap: 4em;
+}
+
+.picked:hover {
+    transform: scale(1.1);
+}
+
+.picked:hover {
+    transition: transform 0.5s;
+}
+
+.pickedHouse {
+    opacity: 0;
+    animation: PHouse 2s forwards;
+}
+
+.pickedYour {
+    opacity: 0;
+    animation: PYour 0.5s forwards;
+}
+
+@keyframes PHouse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes PYour {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.winOrLose {
+    animation: pulse 2s ease-in;
+    transition: transform 0.5s;
+}
+
+@keyframes pulse {
+    0%, 30% { transform: scale(0); opacity: 1; }
+    60%, 80% { transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.5); }
+}
+
+
+.bordas {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    z-index: 10;
+    width: 140px;
+    height: 140px;
+}
+
+/* RESULT JSX */
+
+.again {
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    line-height: 0.1em;
+}
+
+.again p {
+    color: #FFFFFF;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.again button {
+    width: 200px;
+    height: 50px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.4em;
+    color: #141539;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.res {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5em 0;
+    gap: 2em;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.res p {
+    margin: 3em 0 0 0;
+}
+
+.scissors {
+    border: 15px solid #ec9e0e;
+}
+
+.spock {
+    border: 15px solid #40b9ce;
+}
+
+.paper {
+    border: 15px solid #4865f4;
+}
+
+.lizard {
+    border: 15px solid #834fe3;
+}
+
+.rock {
+    border: 15px solid #dc2e4e;
 }
